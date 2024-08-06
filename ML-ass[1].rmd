@@ -1,0 +1,128 @@
+---
+title: "ML assignment"
+author: "sriram"
+date: '2024-08-06'
+output: html_document
+---
+
+```{r}
+set.seed(1)          
+x <- rnorm(100)      
+
+```
+
+
+```{r}
+eps <- rnorm(100, sd = sqrt(0.25))
+```
+
+
+```{r}
+y <- -1 + 0.5 * x + eps
+
+```
+
+
+```{r}
+length(y)
+
+```
+
+
+```{r}
+plot(x, y, main="Scatterplot of x and y", xlab="x", ylab="y", pch=19)
+
+```
+```{r}
+model <- lm(y ~ x)
+summary(model)
+
+```
+
+```{r}
+plot(x, y, main="Scatterplot of x and y with Regression Lines", xlab="x", ylab="y", pch=19)
+
+
+abline(model, col="blue")
+
+
+abline(a = -1, b = 0.5, col="red")
+
+
+legend("topright", legend=c("Least Squares Line", "Population Regression Line"), 
+       col=c("blue", "red"), lty=1)
+
+```
+2 question
+```{r}
+library(MASS)
+library(ISLR)
+
+```
+
+```{r}
+attach(Boston)
+names(Boston)
+```
+```{r}
+fit1 = lm(crim ~ zn )
+summary(fit1)
+
+
+```
+```{r}
+fit2 = lm(crim ~ indus )
+summary(fit2)
+```
+```{r}
+fit3 = lm(crim ~ chas )
+summary(fit3)
+```
+
+```{r}
+fit4 = lm(crim ~ nox )
+summary(fit4)
+```
+
+```{r}
+fit5 = lm(crim ~rm )
+summary(fit5)
+```
+```{r}
+fit6 = lm(crim ~age )
+summary(fit6)
+```
+
+```{r}
+fit7 = lm(crim ~dis )
+summary(fit7)
+```
+```{r}
+fit8 = lm(crim ~rad )
+summary(fit8)
+```
+```{r}
+fit9 = lm(crim ~tax )
+summary(fit9)
+```
+```{r}
+fit10 = lm(crim ~ptratio)
+summary(fit10)
+```
+```{r}
+fit11 = lm(crim ~black)
+summary(fit11)
+```
+```{r}
+fit12 = lm(crim ~lstat)
+summary(fit12)
+```
+```{r}
+fit13 = lm(crim ~medv)
+summary(fit13)
+```
+```{r}
+fit0 = lm (crim ~., data=Boston)
+summary(fit0)
+```
+
